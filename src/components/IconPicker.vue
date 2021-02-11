@@ -1,10 +1,15 @@
 <template>
   <div class="icon-picker-wrap" id="icon-picker-wrap">
     <ul class="icon-picker">
-      <li id="select-icon" class="select-icon" title="Icon Library" @click="togglePicker">
+      <li
+        id="select-icon"
+        class="select-icon"
+        title="Icon Library"
+        @click="togglePicker"
+      >
         <i :class="modelValue"></i>
       </li>
-      <input type="hidden" name="icon_value" id="icon_value" value="" />
+      <input type="hidden" name="icon_value" value="" />
     </ul>
   </div>
 
@@ -48,7 +53,13 @@
           </div>
           <div class="aim-modal--icon-preview-inner">
             <div id="aim-modal--icon-preview">
-              <div class="aim-icon-item" v-for="glyph in glyphs" :key="glyph" :class="{'aesthetic-selected':isActiveGlyph(glyph)}" @click="setActiveGlyph(glyph)">
+              <div
+                class="aim-icon-item"
+                v-for="glyph in glyphs"
+                :key="glyph"
+                :class="{ 'aesthetic-selected': isActiveGlyph(glyph) }"
+                @click="setActiveGlyph(glyph)"
+              >
                 <div class="aim-icon-item-inner">
                   <i :class="glyph"></i>
                   <div class="aim-icon-item-name" title="address-book">
@@ -68,49 +79,48 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue'
-import fontLibrary from './data/fonts'
+import { ref, computed } from "vue"
+import fontLibrary from "./data/fonts"
 export default {
   props: {
     label: {
       type: String,
-      default: 'Vue3 Icon Picker'
+      default: "Vue3 Icon Picker",
     },
     modelValue: {
-      type:String,
-      default:"fas fa-circle"
-    }
+      type: String,
+      default: "fas fa-circle",
+    },
   },
-  setup (props, context) {
-    const icon = ref(props.modelValue)
-    const filterText = ref('')
-    const activeGlyph = ref('')
-    const isVisible=ref(false)
+  setup(props, context) {
+    const filterText = ref("")
+    const activeGlyph = ref("")
+    const isVisible = ref(false)
     const tabs = [
       {
-        id: 'all',
-        title: 'All Icons',
-        icon: 'fas fa-star-of-life',
-        link: 'all'
+        id: "all",
+        title: "All Icons",
+        icon: "fas fa-star-of-life",
+        link: "all",
       },
       {
-        id: 'far',
-        title: 'Font Awesome Regular',
-        icon: 'fab fa-font-awesome-alt',
-        link: fontLibrary.fontAwesome.variants.regular
+        id: "far",
+        title: "Font Awesome Regular",
+        icon: "fab fa-font-awesome-alt",
+        link: fontLibrary.fontAwesome.variants.regular,
       },
       {
-        id: 'fas',
-        title: 'Font Awesome Solid',
-        icon: 'fab fa-font-awesome',
-        link: fontLibrary.fontAwesome.variants.solid
+        id: "fas",
+        title: "Font Awesome Solid",
+        icon: "fab fa-font-awesome",
+        link: fontLibrary.fontAwesome.variants.solid,
       },
       {
-        id: 'fab',
-        title: 'Font Awesome Brands',
-        icon: 'fab fa-font-awesome-flag',
-        link: fontLibrary.fontAwesome.variants.brands
-      }
+        id: "fab",
+        title: "Font Awesome Brands",
+        icon: "fab fa-font-awesome-flag",
+        link: fontLibrary.fontAwesome.variants.brands,
+      },
     ]
 
     const activeTab = ref(tabs[0])
@@ -122,52 +132,49 @@ export default {
 
     const glyphs = computed(() => {
       let _glyphs = []
-      if (activeTab.value.id !== 'all') {
+      if (activeTab.value.id !== "all") {
         _glyphs = activeTab.value.link.icons
       } else {
-        _glyphs = allGlyphs //needs a better approach
+        _glyphs = allGlyphs
       }
 
-      if (filterText.value != '') {
-        // _glyphs = _glyphs.filter(function (item) {
-        //   return item.substr(6, filterText.value.length) == filterText.value
-        // })
-
+      if (filterText.value != "") {
+        const _filterText = filterText.value.toLowerCase()
         _glyphs = _glyphs.filter(
-          item => item.substr(7, filterText.value.length) === filterText.value
+          (item) => item.substr(7, filterText.value.length) === _filterText
         )
       }
       return _glyphs
     })
 
-    const setActiveGlyph = glyph =>{
+    const setActiveGlyph = (glyph) => {
       activeGlyph.value = glyph
-    } 
-    
-    const isActiveGlyph = glyph =>{
+    }
+
+    const isActiveGlyph = (glyph) => {
       return activeGlyph.value == glyph
     }
 
-    const isActiveTab = tab => {
+    const isActiveTab = (tab) => {
       return tab == activeTab.value.id
     }
-    const setActiveTab = tab => {
+    const setActiveTab = (tab) => {
       activeTab.value = tab
       // filterText.value=''; //nice feature
     }
 
-    const getGlyphName = glyph =>
-      glyph.replace(/f.. fa-/g, '').replace('-', ' ')
+    const getGlyphName = (glyph) =>
+      glyph.replace(/f.. fa-/g, "").replace("-", " ")
 
-    const insert = () =>{
-      context.emit('update:modelValue', activeGlyph.value)
+    const insert = () => {
+      context.emit("update:modelValue", activeGlyph.value)
       isVisible.value = false
     }
 
-    const togglePicker = ()=>{
+    const togglePicker = () => {
       isVisible.value = !isVisible.value
     }
-    const closePicker = ()=>{
+    const closePicker = () => {
       isVisible.value = false
     }
 
@@ -184,12 +191,12 @@ export default {
       insert,
       isVisible,
       togglePicker,
-      closePicker
+      closePicker,
     }
-  }
+  },
 }
 </script>
 
 <style scoped>
-@import '../assets/css/style.css';
+@import "../assets/css/style.css";
 </style>

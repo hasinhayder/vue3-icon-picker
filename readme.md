@@ -12,4 +12,7 @@ git clone git@github.com:hasinhayder/vue3-icon-picker.git
 cd vue3-icon-picker
 yarn 
 yarn dev  
+
+#when you're happy with changes
+yarn build
 ```

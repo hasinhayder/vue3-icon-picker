@@ -4,4 +4,4 @@ Vanilla Js Version was developed by the awesome people @ here - https://github.c
 
 Ported to Vue3 By [Me](https://fb.me/hasin "Hasin Hayder") :)
 
-Check The Demo [Me](https://hasinhayder.github.io/vue3-icon-picker/ "Vue3 Icon Picker Demo") :)
+Check The Demo of [Vue3 Icon Picker](https://hasinhayder.github.io/vue3-icon-picker/ "Vue3 Icon Picker Demo") :)

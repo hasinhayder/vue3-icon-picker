@@ -1,7 +1,6 @@
-.icon-picker-wrap {
-    /* margin: 0 auto; */
-    /* margin-top: 10%; */
-    /* text-align: center; */
+.vue3-icon-picker{
+  cursor: pointer;
+  /* font-size:30px; */
 }
 
 button.select-icon {
@@ -187,7 +186,7 @@ button.select-icon {
     padding: 0 15px 15px;
 }
 
-#aim-modal--icon-preview {
+.aim-modal--icon-preview {
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
 	grid-gap: 20px;
@@ -367,27 +366,27 @@ button.select-icon {
 	}
 }
 @media (max-width: 1439px) {
-	#aim-modal--icon-preview {
+	.aim-modal--icon-preview {
 		grid-template-columns: repeat(6, 1fr);
 	}
 }
 @media (max-width: 1024px) {
-	#aim-modal--icon-preview {
+	.aim-modal--icon-preview {
 		grid-template-columns: repeat(5, 1fr);
 	}
 }
 @media (max-width: 767px) {
-	#aim-modal--icon-preview {
+	.aim-modal--icon-preview {
 		grid-template-columns: repeat(4, 1fr);
 	}
 }
 @media (max-width: 479px) {
-	#aim-modal--icon-preview {
+	.aim-modal--icon-preview {
 		grid-template-columns: repeat(3, 1fr);
 	}
 }
 @media (max-width: 479px) {
-	#aim-modal--sidebar {
+	.aim-modal--sidebar {
 		display: none;
 	}
 }

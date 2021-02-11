@@ -1,17 +1,7 @@
 <template>
-  <div class="icon-picker-wrap" id="icon-picker-wrap">
-    <ul class="icon-picker">
-      <li
-        id="select-icon"
-        class="select-icon"
-        title="Icon Library"
-        @click="togglePicker"
-      >
-        <i :class="modelValue"></i>
-      </li>
-      <input type="hidden" name="icon_value" value="" />
-    </ul>
-  </div>
+  <span v-bind="$attrs" @click="togglePicker">
+    <i class="vue3-icon-picker" :class="modelValue"></i>
+  </span>
 
   <div class="aim-modal aim-open" v-if="isVisible">
     <div class="aim-modal--content">
@@ -26,7 +16,7 @@
         </div>
       </div>
       <div class="aim-modal--body">
-        <div id="aim-modal--sidebar" class="aim-modal--sidebar">
+        <div class="aim-modal--sidebar">
           <div class="aim-modal--sidebar-tabs">
             <div
               class="aim-modal--sidebar-tab-item"
@@ -51,16 +41,13 @@
             </div>
           </div>
         </div>
-        <div
-          id="aim-modal--icon-preview-wrap"
-          class="aim-modal--icon-preview-wrap"
-        >
+        <div class="aim-modal--icon-preview-wrap">
           <div class="aim-modal--icon-search">
             <input v-model="filterText" placeholder="Filter by name..." />
             <i class="fas fa-search"> </i>
           </div>
           <div class="aim-modal--icon-preview-inner">
-            <div id="aim-modal--icon-preview">
+            <div class="aim-modal--icon-preview">
               <div
                 class="aim-icon-item"
                 v-for="glyph in glyphs"
@@ -91,6 +78,7 @@ import { ref, computed } from 'vue'
 import fontLibrary from './data/fonts'
 
 export default {
+  inheritAttrs:false,
   props: {
     label: {
       type: String,

@@ -1,5 +1,5 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <a href="https://github.com/hasinhayder/vue3-icon-picker" target="_blank"><img alt="Vue logo" src="./assets/logo.png" /></a>
   <icon-picker v-model="icon"/>
   <icon-picker v-model="anotherIcon"/>
   <p>
@@ -8,6 +8,8 @@
   Icon 2 = {{anotherIcon}}<br/>
 
   </p>
+
+  <p>Github: <a href="https://github.com/hasinhayder/vue3-icon-picker" target="_blank">Vue3 Icon Picker</a></p>
 </template>
 
 <script>

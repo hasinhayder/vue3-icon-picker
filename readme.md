@@ -16,3 +16,7 @@ yarn dev
 #when you're happy with the changes
 yarn build
 ```
+
+### Preview
+
+![Vue3 Icon Picker Preview](https://hasinhayder.github.io/vue3-icon-picker/preview.png)

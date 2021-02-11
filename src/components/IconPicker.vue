@@ -40,6 +40,16 @@
               <span>{{ tab.title }}</span>
             </div>
           </div>
+          <div class="aim-sidebar-preview">
+            <div class="aim-icon-item ">
+              <div class="aim-icon-item-inner">
+                <i :class="activeGlyph"></i>
+                <div class="aim-icon-item-name">
+                  {{ activeGlyph }}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div
           id="aim-modal--icon-preview-wrap"
@@ -60,7 +70,7 @@
               >
                 <div class="aim-icon-item-inner">
                   <i :class="glyph"></i>
-                  <div class="aim-icon-item-name" title="address-book">
+                  <div class="aim-icon-item-name">
                     {{ getGlyphName(glyph) }}
                   </div>
                 </div>
@@ -93,9 +103,9 @@ export default {
   },
   setup (props, context) {
     const filterText = ref('')
-    const activeGlyph = ref('')
+    const activeGlyph = ref(props.modelValue)
     const isVisible = ref(false)
-    
+
     const tabs = [
       {
         id: 'all',
@@ -187,6 +197,7 @@ export default {
       isActiveTab,
       setActiveTab,
       glyphs,
+      activeGlyph,
       getGlyphName,
       filterText,
       setActiveGlyph,
@@ -201,5 +212,5 @@ export default {
 </script>
 
 <style scoped>
-@import "../assets/css/style.css";
+@import '../assets/css/style.css';
 </style>

@@ -20,8 +20,8 @@ export default {
     IconPicker
   },
   setup(){
-    const icon = ref('fas fa-circle')
-    const anotherIcon = ref('fas fa-far fa-arrow-alt-circle-up')
+    const icon = ref('far fa-grin-hearts')
+    const anotherIcon = ref('far fa-thumbs-up')
     return {icon, anotherIcon}
   }
 }

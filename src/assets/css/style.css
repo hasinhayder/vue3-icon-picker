@@ -320,6 +320,28 @@ button.select-icon {
 	background-color: #39b54a;
 }
 
+/* preview sidebar */
+.aim-sidebar-preview {
+  position: absolute;
+  bottom: 50px;
+  width: 300px;
+}
+
+.aim-sidebar-preview .aim-icon-item {
+  height: 200px;
+}
+
+.aim-sidebar-preview .aim-icon-item-inner i {
+  padding-top: 10px;
+  font-size: 120px;
+}
+
+.aim-sidebar-preview .aim-icon-item-name {
+  padding-top: 20px;
+  font-size: 20px;
+  color: #444;
+  text-transform: lowercase;
+}
 
 
 /* Responsive css */

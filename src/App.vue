@@ -17,7 +17,7 @@
   </div>
   <div>
     <h1>
-      You can pass <icon-picker v-model="icon2" style="color:orange" /> inline
+      You can pass <icon-picker v-model="icon4" style="color:orange" /> inline
       css and attributes as well
     </h1>
   </div>

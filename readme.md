@@ -8,7 +8,7 @@ Check The Demo of [Vue3 Icon Picker](https://hasinhayder.github.io/vue3-icon-pic
 
 ### How to build
 ```sh
-git clone git@github.com:hasinhayder/vue3-icon-picker.git
+git clone https://github.com/hasinhayder/vue3-icon-picker.git
 cd vue3-icon-picker
 yarn 
 yarn dev  
@@ -16,3 +16,7 @@ yarn dev
 #when you're happy with the changes
 yarn build
 ```
+
+### Preview
+
+![Vue3 Icon Picker Preview](https://hasinhayder.github.io/vue3-icon-picker/preview.png)

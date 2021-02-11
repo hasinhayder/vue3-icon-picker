@@ -6,18 +6,18 @@
   <div>
     <h1>Click on the icon to see Vue3 Icon Picker in action</h1>
   </div>
-  <icon-picker v-model="icon1" class="icon" />
+  <vue3-icon-picker v-model="icon1" class="icon" />
   <div>
-    <h1>Works in inline <icon-picker v-model="icon2" /> text tooooo</h1>
+    <h1>Works in inline <vue3-icon-picker v-model="icon2" /> text tooooo</h1>
   </div>
   <div>
     <p>
-      And even in paragraphs, like <icon-picker v-model="icon3" /> this icon
+      And even in paragraphs, like <vue3-icon-picker v-model="icon3" /> this icon
     </p>
   </div>
   <div>
     <h1>
-      You can pass <icon-picker v-model="icon4" style="color:orange" /> inline
+      You can pass <vue3-icon-picker v-model="icon4" style="color:orange" /> inline
       css and attributes as well
     </h1>
   </div>
@@ -29,27 +29,15 @@
     Icon 4 = {{ icon4 }}<br />
   </p>
 
-  <p>
-    <!-- Place this tag where you want the button to render. -->
-    <a
-      class="github-button"
-      href="https://github.com/hasinhayder/vue3-icon-picker"
-      data-color-scheme="no-preference: dark; light: light; dark: dark;"
-      data-size="large"
-      data-show-count="true"
-      aria-label="Star ntkme/github-buttons on GitHub"
-    >
-      Star
-    </a>
-  </p>
+  
 </template>
 
 <script>
 import { ref } from 'vue'
-import IconPicker from './components/IconPicker.vue'
+import Vue3IconPicker from './components/Vue3IconPicker.vue'
 export default {
   components: {
-    IconPicker
+    Vue3IconPicker
   },
   setup () {
     const icon1 = ref('far fa-grin-hearts')

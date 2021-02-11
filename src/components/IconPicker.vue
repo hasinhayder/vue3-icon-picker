@@ -1,7 +1,6 @@
 <template>
   <div class="icon-picker-wrap" id="icon-picker-wrap">
     <ul class="icon-picker">
-      <li class="icon-none" title="None"><i class="fas fa-ban"></i></li>
       <li id="select-icon" class="select-icon" title="Icon Library" @click="togglePicker">
         <i :class="modelValue"></i>
       </li>
@@ -9,7 +8,7 @@
     </ul>
   </div>
 
-  <div class="aim-modal aim-open" id="aim-modal" v-show="isVisible">
+  <div class="aim-modal aim-open" id="aim-modal" v-if="isVisible">
     <div class="aim-modal--content">
       <div class="aim-modal--header">
         <div class="aim-modal--header-logo-area">
@@ -133,8 +132,6 @@ export default {
         // _glyphs = _glyphs.filter(function (item) {
         //   return item.substr(6, filterText.value.length) == filterText.value
         // })
-        console.log('filtering')
-        console.log('filtering', _glyphs[0].substr(7, filterText.value.length))
 
         _glyphs = _glyphs.filter(
           item => item.substr(7, filterText.value.length) === filterText.value
@@ -163,7 +160,6 @@ export default {
       glyph.replace(/f.. fa-/g, '').replace('-', ' ')
 
     const insert = () =>{
-      console.log(activeGlyph.value)
       context.emit('update:modelValue', activeGlyph.value)
       isVisible.value = false
     }

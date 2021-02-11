@@ -12,7 +12,6 @@
 
 <script>
 import {ref} from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
 import IconPicker from './components/IconPicker.vue'
 export default {
   components:{

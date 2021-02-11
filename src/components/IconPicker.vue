@@ -8,7 +8,7 @@
     </ul>
   </div>
 
-  <div class="aim-modal aim-open" id="aim-modal" v-if="isVisible">
+  <div class="aim-modal aim-open" v-if="isVisible">
     <div class="aim-modal--content">
       <div class="aim-modal--header">
         <div class="aim-modal--header-logo-area">

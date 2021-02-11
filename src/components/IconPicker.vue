@@ -9,7 +9,7 @@
       >
         <i :class="modelValue"></i>
       </li>
-      <input type="hidden" name="icon_value" id="icon_value" value="" />
+      <input type="hidden" name="icon_value" value="" />
     </ul>
   </div>
 

@@ -139,8 +139,9 @@ export default {
       }
 
       if (filterText.value != "") {
+        const _filterText = filterText.value.toLowerCase()
         _glyphs = _glyphs.filter(
-          (item) => item.substr(7, filterText.value.length) === filterText.value
+          (item) => item.substr(7, filterText.value.length) === _filterText
         )
       }
       return _glyphs

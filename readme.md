@@ -13,6 +13,6 @@ cd vue3-icon-picker
 yarn 
 yarn dev  
 
-#when you're happy with changes
+#when you're happy with the changes
 yarn build
 ```

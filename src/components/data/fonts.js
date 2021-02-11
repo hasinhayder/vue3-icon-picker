@@ -1144,7 +1144,6 @@ export default {
           'fab fa-accusoft',
           'fab fa-acquisitions-incorporated',
           'fab fa-adn',
-          'fab fa-adobe',
           'fab fa-adversal',
           'fab fa-affiliatetheme',
           'fab fa-airbnb',
